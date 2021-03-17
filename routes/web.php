@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Site')->group(function (){
+    Route::get('/', 'LoginController');
+
+    Route::get('categorias', 'CategoryController@index')->name('category');
+    Route::get('categorias/cadastro', 'CategoryController@store')->name('category.store');
+    Route::post('categorias/cadastro', 'CategoryController@form')->name('category.form');
+    Route::get('categorias/cadastro/{id}', function ($id){
+        return action('CategoryController@edit');
+    })->name('category.edit');
+
+    Route::post('/', 'LoginController@authenticate')->name('login.auth');
 });
