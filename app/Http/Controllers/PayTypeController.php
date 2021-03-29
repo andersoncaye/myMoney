@@ -81,7 +81,7 @@ class PayTypeController extends Controller
      */
     public function destroy($id)
     {
-        $paytype = PayType::findOrFail(3);
+        $paytype = PayType::findOrFail($id);
         $paytype->delete();
         return Redirect::to('/tipo_pagamento');
     }

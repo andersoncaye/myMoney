@@ -13,7 +13,7 @@ class CreatePaytypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('paytypes', function (Blueprint $table) {
+        Schema::create('pay_types', function (Blueprint $table) {
             $table->id();
             $table->string('name', 128);
             $table->timestamps();

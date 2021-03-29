@@ -54,6 +54,17 @@
                         @else
 
                             <!-- MENU DAS PÁGINAS -->
+                                <!-- USUÁRIOS -->
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Usuários
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('usuario') }}">
+                                        Lista de Usuários
+                                    </a>
+                                </div>
+                            </li>
                                 <!-- CATEGORIAS -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -68,18 +79,22 @@
                                     </a>
                                 </div>
                             </li>
-
-                                <!-- USUÁRIOS -->
+                                <!-- TIPO PAGAMENTO -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Usuários
+                                    Tipo de Pagamento
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('usuario') }}">
-                                        Lista de Usuários
+                                    <a class="dropdown-item" href="{{ url('tipo_pagamento') }}">
+                                        Lista de Tipos de Pagamentos
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url('tipo_pagamento/novo') }}">
+                                        Nova Tipo de Pagamento
                                     </a>
                                 </div>
                             </li>
+
+
 
                             <!-- MENU DO LOGIN -->
 
