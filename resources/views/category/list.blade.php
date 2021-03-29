@@ -30,7 +30,12 @@
                             <th scope="row">{{ $u-> id}}</th>
                             <td>{{ $u-> name}}</td>
                             <td> <a href="categoria/{{$u->id}}/cadastro" class="btn btn-info btn-sm">Editar</a> </td>
-                            <td> <a href="" class="btn btn-danger btn-sm">Deletar</a> </td>
+                            <td>
+                                <form action="{{ url('categoria/cadastro/update') }}/{{$u->id}}" method="POST">
+                                    @csrf
+                                    <button class="btn btn-danger btn-sm">Deletar</button>
+                                </form>
+                            </td>
                     @endforeach
                     </tbody>
                 </table>

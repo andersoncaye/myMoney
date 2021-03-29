@@ -30,3 +30,4 @@ Route::get('/categoria/novo', 'CategoriesController@formNew');
 Route::post('/categoria/cadastro/store', 'CategoriesController@store');
 Route::get('/categoria/{id}/cadastro', 'CategoriesController@formEdit');
 Route::post('/categoria/cadastro/update/{id}', 'CategoriesController@update');
+Route::post('/categoria/cadastro/delete/{id}', 'CategoriesController@destroy');
