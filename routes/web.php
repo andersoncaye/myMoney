@@ -22,3 +22,11 @@ Route::group(['middleware' => 'web'], function () {
     Auth::routes();
     Route::get('/home', 'HomeController@index')->name('home');
 });
+
+Route::get('/usuario', 'UsersController@index');
+
+Route::get('/categoria', 'CategoriesController@index');
+Route::get('/categoria/novo', 'CategoriesController@formNew');
+Route::post('/categoria/cadastro/store', 'CategoriesController@store');
+Route::get('/categoria/{id}/cadastro', 'CategoriesController@formEdit');
+Route::post('/categoria/cadastro/update/{id}', 'CategoriesController@update');
