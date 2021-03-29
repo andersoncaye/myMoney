@@ -23,11 +23,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 });
 
-Route::get('/usuario', 'UsersController@index');
+Route::get('/usuario', 'UsersController@index')->middleware('auth');
+//Route::get('/usuario/novo', 'UsersController@formNew');
 
-Route::get('/categoria', 'CategoriesController@index');
-Route::get('/categoria/novo', 'CategoriesController@formNew');
-Route::post('/categoria/cadastro/store', 'CategoriesController@store');
-Route::get('/categoria/{id}/cadastro', 'CategoriesController@formEdit');
-Route::post('/categoria/cadastro/update/{id}', 'CategoriesController@update');
-Route::post('/categoria/cadastro/delete/{id}', 'CategoriesController@destroy');
+Route::get('/categoria', 'CategoriesController@index')->middleware('auth');
+Route::get('/categoria/novo', 'CategoriesController@formNew')->middleware('auth');
+Route::post('/categoria/cadastro/store', 'CategoriesController@store')->middleware('auth');
+Route::get('/categoria/{id}/cadastro', 'CategoriesController@formEdit')->middleware('auth');
+Route::post('/categoria/cadastro/update/{id}', 'CategoriesController@update')->middleware('auth');
+Route::delete('/categoria/cadastro/delete/{id}', 'CategoriesController@destroy')->middleware('auth');

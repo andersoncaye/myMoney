@@ -14,11 +14,35 @@
                         </div>
                     @endif
 
-                    <!--<h1>Lista de Usuários</h1>-->
+                       <!-- <a href ="{{ url('categoria/novo') }}" class="btn btn-success">Nova Categoria</a>
+                        <p> </p> -->
+                        <table class="table table-hover table-sm table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nome do Usuário</th>
+                                <th scope="col">Email</th>
+                                <!-- <th scope="col" colspan="2">Ação</th> -->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ( $users as $u)
+                                <tr>
+                                    <th scope="row">{{ $u->id}}</th>
+                                    <td>{{ $u->name}}</td>
+                                    <td>{{ $u->email}}</td>
+                                    <!-- <td> <a href="categoria/{{$u->id}}/cadastro" class="btn btn-info btn-sm">Editar</a> </td>
+                                    <td>
+                                        <form action="{{ url('categoria/cadastro/delete') }}/{{$u->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger btn-sm">Deletar</button>
+                                        </form>
+                                    </td> -->
+                            @endforeach
+                            </tbody>
+                        </table>
 
-                    @foreach ( $users as $u)
-                    <p> {{ $u-> name}} | {{ $u->email }} </p>
-                    @endforeach
 
                 </div>
             </div>

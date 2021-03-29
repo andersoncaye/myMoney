@@ -18,4 +18,8 @@ class UsersController extends Controller
 
         return view('users.list', ['users' => $users]);
     }
+
+    public function formNew(){
+        return view('auth/register');
+    }
 }
