@@ -10,7 +10,8 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class CategoryTest extends TestCase
 {
-    use RefreshDatabase, WithoutMiddleware;
+    //use RefreshDatabase;
+    use WithoutMiddleware;
 
     protected $idCategory;
 
@@ -22,13 +23,5 @@ class CategoryTest extends TestCase
         $arrayCompared = array_diff($expected, $category->getFillable());
         //dd($arrayCompared);
         $this->assertEquals(0, count($arrayCompared));
-    }
-
-    /** @tes */
-    public function insert_category()
-    {
-        $category = new Category();
-        $response = $category->create(['name' => 'Teste Automatizado de Inserção']);
-        $this->assertEquals(0, $response > 0);
     }
 }

@@ -10,7 +10,8 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class PayTypeTest extends TestCase
 {
-    use RefreshDatabase, WithoutMiddleware;
+    //use RefreshDatabase;
+    use WithoutMiddleware;
 
     /** @test */
     public function check_if_pay_type_columns_is_correct()

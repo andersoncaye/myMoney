@@ -9,7 +9,8 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    use RefreshDatabase, WithoutMiddleware;
+    //use RefreshDatabase;
+    use WithoutMiddleware;
 
     /** @test */
     public function return_view_page_list_users()
