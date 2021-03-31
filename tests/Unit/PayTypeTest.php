@@ -4,12 +4,15 @@ namespace Tests\Unit;
 
 use App\PayType;
 use PHPUnit\Framework\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+
 
 class PayTypeTest extends TestCase
 {
-    /**
-     * @test
-     */
+    use RefreshDatabase, WithoutMiddleware;
+
+    /** @test */
     public function check_if_pay_type_columns_is_correct()
     {
         $paytype = new PayType();

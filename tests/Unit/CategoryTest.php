@@ -5,16 +5,16 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use App\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+
 
 class CategoryTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, WithoutMiddleware;
 
     protected $idCategory;
 
-    /**
-     * @test
-     */
+    /** @test */
     public function check_if_category_columns_is_correct()
     {
         $category = new Category();
@@ -24,4 +24,11 @@ class CategoryTest extends TestCase
         $this->assertEquals(0, count($arrayCompared));
     }
 
+    /** @tes */
+    public function insert_category()
+    {
+        $category = new Category();
+        $response = $category->create(['name' => 'Teste Automatizado de Inserção']);
+        $this->assertEquals(0, $response > 0);
+    }
 }
