@@ -47,7 +47,8 @@ class PayTypeTest extends TestCase
     public function delete_pay_type()
     {
         $payType = PayType::orderBy('id', 'desc')->first();
-        $response = $payType->forceDelete();
+        $response = $payType->delete();
+//        $response = $payType->forceDelete();
         $this->assertEquals(1, $response);
     }
 }

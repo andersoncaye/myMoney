@@ -51,7 +51,8 @@ class CategoryTest extends TestCase
     public function delete_category()
     {
         $category = Category::orderBy('id', 'desc')->first();
-        $response = $category->forceDelete();
+        $response = $category->delete();
+//        $response = $category->forceDelete();
 //        dd($response);
 //        print_r([]);
 //        echo $category->id.' - '.$category->name;
