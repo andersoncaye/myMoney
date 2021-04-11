@@ -6,7 +6,6 @@ dist: trusty
 
 php:
   - '7.3'
-  - '7.4'
 
 os: linux
 
@@ -18,7 +17,7 @@ before_install:
 
 before_script:
  - composer install
- - cp .env.testing.example .env.testing
+ - cp .env.example .env
  - php artisan key:generate
 # - php artisan jwt:secret
 
